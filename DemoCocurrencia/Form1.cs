@@ -16,7 +16,7 @@ namespace DemoCocurrencia
                 Thread.Sleep(2000);
                 ActualizarResultado($" Actividad - paso {i + 1}");
             }
-            ActualizarResultado("Fin del  Proceso Secuencial.");
+            ActualizarResultado("¡Fin del  Proceso Secuencial.");
         }
 
         private void ActualizarResultado(string mensaje)
@@ -31,7 +31,7 @@ namespace DemoCocurrencia
 
         private void BtnIniciarHilo_Click(object sender, EventArgs e)
         {
-            _cts=new CancellationTokenSource();
+            _cts = new CancellationTokenSource();
             var token = _cts.Token;
 
             Thread hilo1 = new Thread(() =>
@@ -59,7 +59,7 @@ namespace DemoCocurrencia
             });
             hilo1.Start();
 
-         }
+        }
         private async void BtnIniciarTarea_Click(object sender, EventArgs e)
         {
             _cts = new CancellationTokenSource();
@@ -84,7 +84,7 @@ namespace DemoCocurrencia
 
                  ActualizarResultado("Tarea Cancelada");
              }
-           
+
          });
 
 
@@ -94,6 +94,11 @@ namespace DemoCocurrencia
         private void BtnCancelarhilo_Click(object sender, EventArgs e)
         {
             _cts?.Cancel();
+        }
+
+        private void FrmConcurrencia_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
