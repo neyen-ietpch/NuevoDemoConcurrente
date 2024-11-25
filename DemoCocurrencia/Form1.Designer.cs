@@ -117,6 +117,7 @@
             TxtResultado.Name = "TxtResultado";
             TxtResultado.Size = new Size(385, 450);
             TxtResultado.TabIndex = 0;
+            TxtResultado.TextChanged += TxtResultado_TextChanged;
             // 
             // FrmConcurrencia
             // 
